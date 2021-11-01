@@ -1,0 +1,348 @@
+
+
+<div class="container">
+  <div class="service">
+      <div class="col-xs-6 col-sm-3 service-item service-line">
+          <div class="icon">
+              <img alt="services" src="assets/frontend/images/s1.png" />
+          </div>
+          <div class="info">
+              <span class="title3 orange">SẢN PHẨM PHONG PHÚ</span>
+              <div>Đầy đủ các thể loại...</div>
+          </div>
+      </div>
+      <div class="col-xs-6 col-sm-3 service-item service-line">
+          <div class="icon">
+              <img alt="services" src="assets/frontend/images/s2.png" />
+          </div>
+          <div class="info">
+              <span class="title3 orange">SẢN PHẨM CHẤT LƯỢNG</span>
+              <div>Cam kết hỗ trợ &amp; liên hệ</div>
+          </div>
+      </div>
+      <div class="col-xs-6 col-sm-3 service-item service-line">
+          <div class="icon">
+              <img alt="services" src="assets/frontend/images/s3.png" />
+          </div>
+
+          <div class="info">
+              <span class="title3 orange">HỖ TRỢ 24/7</span>
+              <div>Giao dịch &amp; Tư vấn</div>
+          </div>
+      </div>
+      <div class="col-xs-6 col-sm-3 service-item service-line">
+          <div class="icon">
+              <img alt="services" src="assets/frontend/images/s4.png" />
+          </div>
+          <div class="info">
+              <span class="title3 orange">THANH TOÁN</span>
+              <div>Thanh toán đảm bảo</div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row banner-bottom">
+      <div class="col-sm-6">
+          <div class="banner-boder-zoom">
+              <a href="dang-ki-ten-mien.html"><img alt="Kiểm tra và đăng kí tên miền" class="img-responsive" src="assets/frontend/images/banner-domain.jpg" /></a>
+          </div>
+      </div>
+      <div class="col-sm-6">
+          <div class="banner-boder-zoom">
+              <a href="hosting-ssd.html"><img alt="Đăng kí hosting ssd chất lượng cao" class="img-responsive" src="assets/frontend/images/banner-hosting.jpg" /></a>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="container" id="columns">
+  <div id="mainbody_upPannel">
+      <div class="row">
+          <a id="mainbody_btnViewBase" href="javascript:__doPostBack('ctl00$mainbody$btnViewBase','')"></a>
+          <a id="mainbody_bntViewDetail" href="javascript:__doPostBack('ctl00$mainbody$bntViewDetail','')"></a>
+          <div class="center_column col-xs-12 col-sm-9" id="center_column">
+              <div id="view-product-list" class="view-product-list">
+                  <h1 class="page-heading">
+                      <span class="page-heading-title">Sản Phẩm hot</span>
+                  </h1>
+                  <ul class="display-product-option">
+                      <li class="view-as-grid selected">
+                          <a onclick="document.getElementById('mainbody_btnViewBase').click();" id="mainbody_btnViewBase1" title="Xem danh sách" href="javascript:__doPostBack('ctl00$mainbody$btnViewBase1','')">
+                              <span>grid</span>
+                          </a>
+                      </li>
+
+                      <li class="view-as-list">
+                          <a onclick="document.getElementById('mainbody_bntViewDetail').click();" id="mainbody_bntViewDetail1" title="Xem chi tiết" href="javascript:__doPostBack('ctl00$mainbody$bntViewDetail1','')">
+                              <span>list</span>
+                          </a>
+                      </li>
+                  </ul>
+                  <!-- PRODUCT LIST -->
+                  <ul  class="row product-list style2 grid" >
+
+                    <li *ngFor ="let item of ProductViews" class="col-sx-12 col-sm-3" itemscope="" itemtype="http://schema.org/Product">
+                      <div class="product-container">
+                          <div class="left-block">
+                              <a href='/detail/{{item.id}}/{{item.iD_Category}}'>
+                                  <div class="img-box">
+                                      <img
+                                          class="img-responsive"
+                                          itemprop="image"
+                                          src="{{item.images}}"
+                                          alt="{{item.name_Product}}"
+                                          title="{{item.name_Product}}"
+                                      />
+                                  </div>
+                              </a>
+                              <div class="quick-view">
+                                  <a title="Sản phẩm" class="search" href='/detail/{{item.id}}/{{item.iD_Category}}'></a>
+                                  <a id="mainbody_rptList_Button4_0" title="Yêu thích sản phẩm này" class="heart LikeSuccess" href="javascript:__doPostBack('ctl00$mainbody$rptList$ctl00$Button4','')"></a>
+                                  <a
+                                      onclick="createCaptcha();"
+                                      id="mainbody_rptList_Button5_0"
+                                      title="Lưu sản phẩm lại cho tôi"
+                                      class="compare"
+                                      data-toggle="modal"
+                                      data-target="#LoginForm"
+                                      role="button"
+                                      href="javascript:__doPostBack('ctl00$mainbody$rptList$ctl00$Button5','')"
+                                  ></a>
+                              </div>
+                              <div class="downview">
+                                  <span class="view-count2">{{item.views}}</span>
+                                  <span class="down-count2">0</span>
+                              </div>
+                              <a class="cate" href='/detail/{{item.id}}/{{item.iD_Category}}'>{{item.name_Category}}</a>
+                          </div>
+                          <div class="right-block">
+                              <a itemprop="url" href='/detail/{{item.id}}/{{item.iD_Category}}'>
+                                <h2 itemprop="name" class="product-name bold" title="{{item.name_Product}}">{{item.name_Product}}</h2>
+                              </a>
+                              <div class="rateit rateit-bg" data-rateit-value="5" data-rateit-readonly="true" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+                                  <meta itemprop="ratingValue" content="5" /><meta itemprop="reviewCount" content="1" /><meta itemprop="bestRating" content="5" />
+                                  <button id="rateit-reset-{{item.id}}" type="button" data-role="none" class="rateit-reset" aria-label="reset rating" aria-controls="rateit-range-2" style="display: none;"><span></span></button>
+                              </div>
+                          </div>
+                      </div>
+                      <meta itemprop="productID" content="26945" />
+                      <meta itemprop="sku" content="26945" />
+                      <meta itemprop="mpn" content="26945" />
+                      <meta itemprop="brand" content="sharecode.vn" />
+                      <meta itemprop="releaseDate" content="15/10/2020 12:18:15 SA" />
+                      <meta itemprop="category" content="Game" />
+                      <meta itemprop="description" content="Code viết thân thiện dễ sử dụng, thao tác dễ dàng, chỉnh sửa linh động khi cần thiết mà không bị lỗi mỗi file xử lý một chức năng." />
+                      <span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                          <meta itemprop="priceCurrency" content="XU" />
+                          <meta itemprop="price" content="300" />
+                          <link itemprop="availability" href="http://schema.org/InStock" />
+                          <meta itemprop="priceValidUntil" content="15/10/2035 12:18:15 SA" />
+                          <meta itemprop="url" content="source-code/web-game-va-admin-panel-api-nap-the-26945.html" />
+                      </span>
+                      <span itemprop="review" itemscope="" itemtype="http://schema.org/Review">
+                          <meta itemprop="datePublished" content="15/10/2020 12:18:15 SA" />
+                          <meta itemprop="author" content="Gà Con" />
+                          <span itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating">
+                              <meta itemprop="worstRating" content="1" />
+                              <meta itemprop="ratingValue" content="5" />
+                              <meta itemprop="bestRating" content="5" />
+                          </span>
+                      </span>
+                    </li>
+                  </ul>
+              </div>
+              <div class="sortPagiBar">
+                  <div class="bottom-pagination">
+                      <nav id="mainbody_PaggingBottom">
+                          <ul class="pagination">
+                              <li *ngFor="let i of range" class="{{a[i]}}"><a (click)="loadPage(i)">{{i}}</a></li>
+                              <li><a (click)="loadPage(totalRecords)"> Trang Cuối </a></li>
+                          </ul>
+                      </nav>
+                  </div>
+                  <div class="sort-product">
+                      <select name="ctl00$mainbody$ddlSort" onchange="javascript:setTimeout('__doPostBack(\'ctl00$mainbody$ddlSort\',\'\')', 0)" id="mainbody_ddlSort">
+                          <option selected="selected" value="New">Mới nhất</option>
+                          <option value="View">Xem nhiều</option>
+                          <option value="Down">Tải nhiều</option>
+                      </select>
+                      <div class="sort-product-icon">
+                          <i class="fa fa-sort-alpha-asc"></i>
+                      </div>
+                  </div>
+              </div>
+              <div class="clearfix"></div>
+          </div>
+          <div class="column col-xs-12 col-sm-3" id="left_column" style="margin-top: 15px;">
+            <div class="block left-module">
+              <p class="title_block">Sản phẩm mới</p>
+              <div class="block_content">
+                  <ul class="products-block best-sell">
+                      <li *ngFor="let item of ProductNew">
+                          <div class="products-block-left">
+                              <a href='/detail/{{item.id}}/{{item.iD_Category}}'>
+                                  <img
+                                      src="{{item.images}}"
+                                      alt="{{item.name_Product}}"
+                                      title="{{item.name_Product}}"
+                                  />
+                              </a>
+                          </div>
+                          <div class="products-block-right" style= "-webkit-line-clamp: 5;-webkit-box-orient: vertical;overflow: hidden;display: -webkit-box;">
+                              <p class="product-name">
+                                  <a href='/detail/{{item.id}}/{{item.iD_Category}}'> </a>
+                              </p>
+                              <h3 class="title2 bold" title="Download Free Code web du lịch wordpress"><a href='/detail/{{item.id}}/{{item.iD_Category}}'>{{item.name_Product}}</a></h3>
+                              <a href='/detail/{{item.id}}/{{item.iD_Category}}'> </a>
+                              <p></p>
+                              <div class="rateit rateit-bg" data-rateit-value="5" data-rateit-readonly="true">
+                                <button id="rateit-reset-m{{item.id}}" type="button" data-role="none" class="rateit-reset" aria-label="reset rating" aria-controls="rateit-range-26" style="display: none;"><span></span></button>
+                              </div>
+                          </div>
+                          <div class="products-block-bottom">
+                              <div>
+                                  <a class="cate" href='/detail/{{item.id}}/{{item.iD_Category}}'>{{item.name_Category}}</a>
+                                  <span class="alignright view-count">489</span>
+                                  <span class="alignright down-count">73</span>
+                              </div>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+            </div>
+
+            <div class="block left-module">
+                <p class="title_block">QUẢNG CÁO</p>
+                <div class="block_content">
+                    <div class="layered layered-category">
+                        <div class="layered-content">
+                            <ul class="tree-menu">
+                                <li>
+                                    <a href="su-kien/%5bsieu-khuyen-mai%5d-dich-vu-may-chu-mua-1-tang-1-den-het-2902-18.html" title="[SIÊU KHUYẾN MÃI] Dịch vụ máy chủ MUA 1 TẶNG 1 đến hết 29/02 - Sự kiện">
+                                        <h3 class="title2 bullet">[SIÊU KHUYẾN MÃI] MUA 1 TẶNG 1 đến hết 20/10 cho sản phẩm khăn nữ<span class="ic_hot"></span></h3>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="cau-hoi/cach-upload-code-hieu-qua-va-toi-uu-seo-10.html" title="Cách UPLOAD code hiệu quả và tối ưu SEO - FAQ">
+                                        <h3 class="title2 bullet">[SIÊU KHUYẾN MÃI] giảm giá đến 10% cho thiết bị điện tử từ 2tr tối đa 500000 vnđ<span class="ic_hot"></span></h3>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="cau-hoi/meo-giup-ban-tang-doanh-thu-ban-source-code-9.html" title="Mẹo giúp bạn TĂNG DOANH THU bán source code - FAQ">
+                                        <h3 class="title2 bullet">Mẹo giúp bạn TĂNG DOANH THU bán hàng<span class="ic_hot"></span></h3>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="cau-hoi/huong-dan-nap-tien-vao-tai-khoan-8.html" title="Hướng dẫn NẠP TIỀN vào tài khoản - FAQ">
+                                        <h3 class="title2 bullet">Hướng dẫn NẠP TIỀN vào tài khoản<span class=""></span></h3>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="cau-hoi/huong-dan-rut-tien-tu-tai-khoan-7.html" title="Hướng dẫn RÚT TIỀN từ tài khoản - FAQ">
+                                        <h3 class="title2 bullet">Hướng dẫn RÚT TIỀN từ tài khoản<span class=""></span></h3>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="cau-hoi/huong-dan-cach-chay-website-aspnet-tren-localhost-2.html" title="Hướng dẫn cách chạy website ASP.Net trên Localhost - FAQ">
+                                        <h3 class="title2 bullet">Hướng dẫn cách chạy website ASP.Net trên Localhost<span class=""></span></h3>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+              <!-- <div id="mainbody_ucBanner_divBanner" class="col-left-slide left-module">
+                  <ul class="owl-carousel owl-style2 owl-theme owl-loaded" data-loop="true" data-nav="false" data-margin="30" data-autoplaytimeout="1000" data-autoplayhoverpause="true" data-items="1" data-autoplay="true">
+                      <div class="owl-stage-outer">
+                          <div class="owl-stage" style="transform: translate3d(-903px, 0px, 0px); transition: all 0s ease 0s; width: 2107px;">
+                              <div class="owl-item cloned" style="width: 271px; margin-right: 30px;">
+                                  <li>
+                                      <a href="cau-hoi/meo-giup-ban-tang-doanh-thu-ban-source-code-9.html" rel="nofollow" target="_blank">
+                                          <img src="FilesUpload/Banner/9_49_20_meo%20tang%20doanh%20thu%20ban%20code2.jpg" alt="Doanh thu, tăng doanh thu, lợi nhuận, bán code" title="Mẹo giúp tăng DOANH THU bán CODE cho bạn" />
+                                      </a>
+                                  </li>
+                              </div>
+                              <div class="owl-item cloned" style="width: 271px; margin-right: 30px;">
+                                  <li>
+                                      <a href="thong-bao.html" rel="nofollow" target="_blank">
+                                          <img
+                                              src="FilesUpload/Banner/0_21_40_sharecode%20tang%20thuong%202.jpg"
+                                              alt="sự kiện, event, tặng thưởng, upload code"
+                                              title="Sự kiện: Mừng ngày giỗ tổ 10/3 - Tặng thưởng khi upload code đạt mốc"
+                                          />
+                                      </a>
+                                  </li>
+                              </div>
+                              <div class="owl-item" style="width: 271px; margin-right: 30px;">
+                                  <li>
+                                      <a href="code-mien-phi.html" rel="nofollow" target="_blank">
+                                          <img
+                                              src="FilesUpload/Banner/14_11_43_download%20source%20code%2c%20do%20an%2c%20ma%20nguon%20mien%20phi.jpg"
+                                              alt="Download source code, download mã nguồn, đồ án miễn phí, thư viện chi sẻ source code"
+                                              title="Download source code, mã nguồn miễn phí"
+                                          />
+                                      </a>
+                                  </li>
+                              </div>
+                              <div class="owl-item active" style="width: 271px; margin-right: 30px;">
+                                  <li>
+                                      <a href="cau-hoi/meo-giup-ban-tang-doanh-thu-ban-source-code-9.html" rel="nofollow" target="_blank">
+                                          <img src="FilesUpload/Banner/9_49_20_meo%20tang%20doanh%20thu%20ban%20code2.jpg" alt="Doanh thu, tăng doanh thu, lợi nhuận, bán code" title="Mẹo giúp tăng DOANH THU bán CODE cho bạn" />
+                                      </a>
+                                  </li>
+                              </div>
+                              <div class="owl-item" style="width: 271px; margin-right: 30px;">
+                                  <li>
+                                      <a href="thong-bao.html" rel="nofollow" target="_blank">
+                                          <img
+                                              src="FilesUpload/Banner/0_21_40_sharecode%20tang%20thuong%202.jpg"
+                                              alt="sự kiện, event, tặng thưởng, upload code"
+                                              title="Sự kiện: Mừng ngày giỗ tổ 10/3 - Tặng thưởng khi upload code đạt mốc"
+                                          />
+                                      </a>
+                                  </li>
+                              </div>
+                              <div class="owl-item cloned" style="width: 271px; margin-right: 30px;">
+                                  <li>
+                                      <a href="code-mien-phi.html" rel="nofollow" target="_blank">
+                                          <img
+                                              src="FilesUpload/Banner/14_11_43_download%20source%20code%2c%20do%20an%2c%20ma%20nguon%20mien%20phi.jpg"
+                                              alt="Download source code, download mã nguồn, đồ án miễn phí, thư viện chi sẻ source code"
+                                              title="Download source code, mã nguồn miễn phí"
+                                          />
+                                      </a>
+                                  </li>
+                              </div>
+                              <div class="owl-item cloned" style="width: 271px; margin-right: 30px;">
+                                  <li>
+                                      <a href="cau-hoi/meo-giup-ban-tang-doanh-thu-ban-source-code-9.html" rel="nofollow" target="_blank">
+                                          <img src="FilesUpload/Banner/9_49_20_meo%20tang%20doanh%20thu%20ban%20code2.jpg" alt="Doanh thu, tăng doanh thu, lợi nhuận, bán code" title="Mẹo giúp tăng DOANH THU bán CODE cho bạn" />
+                                      </a>
+                                  </li>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="owl-controls">
+                          <div class="owl-nav">
+                              <div class="owl-prev" style="display: none;"><i class="fa fa-angle-left"></i></div>
+                              <div class="owl-next" style="display: none;"><i class="fa fa-angle-right"></i></div>
+                          </div>
+                          <div class="owl-dots">
+                              <div class="owl-dot"><span></span></div>
+                              <div class="owl-dot active"><span></span></div>
+                              <div class="owl-dot"><span></span></div>
+                          </div>
+                      </div>
+                  </ul>
+              </div> -->
+          </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,112 @@
+.action {
+  height: 70%;
+  overflow: hidden;
+  border: 1px solid #e2d8c7;
+  font-size: 13px;
+  background: #faf8f1;
+  border-radius: 0px 0px 4px 0px;
+}
+
+.action .title_ac {
+  height: 32px;
+  text-align: center;
+  background: #e2d8c7;
+  padding-top: 8px;
+  border-radius: 16px;
+  -moz-border-radius: 16px;
+  -webkit-border-radius: 16px;
+  margin: 8px 0px;
+}
+
+.log_re {
+  height: 30%;
+  color: #ff8401;
+  background: #faf8f1;
+  border-right: 1px solid #e2d8c7;
+  border-left: 1px solid #e2d8c7;
+  padding-right: 0px;
+}
+.log_re .pad15 {
+  padding-right: 15px;
+}
+.log_re .fa_go {
+  height: 30%;
+  color: #fff;
+  padding: 5px 13px;
+}
+
+.log_re .lo_re {
+  height: 70%;
+  text-align: center;
+}
+
+.log_re .logi {
+  padding-top: 25px;
+  color: #84c52c;
+  height: 100%;
+  padding-bottom: 7px;
+  border-right: 1px solid #e2d8c7;
+}
+.log_re .logi:hover {
+  color: #648d03;
+}
+
+.log_re .logi:before {
+  font: normal normal normal 27px/1 FontAwesome;
+  content: "\f090 ";
+}
+
+.log_re .regt {
+  padding-top: 25px;
+  height: 100%;
+}
+.log_re .regt:hover {
+  color: #db6200;
+}
+.log_re .regt:before {
+  font: normal normal normal 27px/1 FontAwesome;
+  content: "\f234";
+}
+
+.action_box {
+  color: #d5c6ae;
+}
+
+.action_box ul {
+  width: 100%;
+}
+
+.action_box li {
+  background: url("/Image/marker.png") no-repeat left 0px top 14px;
+  list-style: none;
+  padding: 7px 0px 6px 13px;
+  line-height: 15px;
+}
+
+.action_box li .lnkGreen {
+  color: #84c52c;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.action_box li .lnkGreen:hover {
+  text-decoration: underline;
+}
+
+.action_box li .lnkOrange {
+  color: #a9834f;
+  text-decoration: none;
+}
+
+.action_box li .lnkOrange:hover {
+  color: #ff8401;
+}
+
+.action_box li .Orange {
+  color: #ff8401;
+}
+
+.action_box li .Green {
+  color: #84c52c;
+}

@@ -1,0 +1,654 @@
+<div class="columns-container">
+  <div class="container" id="columns">
+      <div class="breadcrumb clearfix" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+          <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+              <a itemprop="item" class="agreen" href="../index.html" title="Trở lại trang chủ">Trang chủ<meta itemprop="name" content="sharecode.vn" /></a>
+              <meta itemprop="position" content="1" />
+          </span>
+          <span class="navigation-pipe">&nbsp;</span>
+
+          <span itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+              <a href="#" id="mainbody_breadcrumb_breadpage_PathCategoryLink" itemprop="item" class="agreen" title="Danh mục Android">
+                  <h2 id="mainbody_breadcrumb_breadpage_PathTitle" class="abread" itemprop="name">Danh mục <b>{{NameCategory}}</b></h2>
+              </a>
+              <meta itemprop="position" content="2" />
+          </span>
+      </div>
+
+      <div class="row">
+          <div class="center_column col-xs-12 col-sm-9" id="center_column">
+              <h1 class="page-heading">
+                  <span id="mainbody_contentbody_contentpage_titlePage" class="page-heading-title">{{NameCategory}}</span>
+              </h1>
+              <div id="mainbody_contentbody_contentpage_upPannel">
+                  <a id="mainbody_contentbody_contentpage_btnViewBase" href="javascript:__doPostBack('ctl00$ctl00$ctl00$mainbody$contentbody$contentpage$btnViewBase','')"></a>
+                  <a id="mainbody_contentbody_contentpage_bntViewDetail" href="javascript:__doPostBack('ctl00$ctl00$ctl00$mainbody$contentbody$contentpage$bntViewDetail','')"></a>
+                  <div id="view-product-list" class="view-product-list">
+                      <div class="page-heading3">&nbsp;</div>
+                      <ul class="display-product-option">
+                          <li class="view-as-grid selected">
+                              <a
+                                  onclick="document.getElementById('mainbody_contentbody_contentpage_btnViewBase').click();"
+                                  id="mainbody_contentbody_contentpage_btnViewBase1"
+                                  title="Xem danh sách"
+                                  href="javascript:__doPostBack('ctl00$ctl00$ctl00$mainbody$contentbody$contentpage$btnViewBase1','')"
+                              >
+                                  <span>grid</span>
+                              </a>
+                          </li>
+
+                          <li class="view-as-list">
+                              <a
+                                  onclick="document.getElementById('mainbody_contentbody_contentpage_bntViewDetail').click();"
+                                  id="mainbody_contentbody_contentpage_bntViewDetail1"
+                                  title="Xem chi tiết"
+                                  href="javascript:__doPostBack('ctl00$ctl00$ctl00$mainbody$contentbody$contentpage$bntViewDetail1','')"
+                              >
+                                  <span>list</span>
+                              </a>
+                          </li>
+                      </ul>
+
+                      <ul class="row product-list style2 grid mar-top4">
+                          <li *ngFor="let item of ProductByCategory" class="col-sx-12 col-sm-3" itemscope="" itemtype="http://schema.org/Product">
+                              <div class="product-container">
+                                  <div class="left-block">
+                                      <a [routerLink]="['/detail',item.id,item.iD_Category]">
+                                          <div class="img-box">
+                                              <img
+                                                  class="img-responsive"
+                                                  itemprop="image"
+                                                  src="{{item.images}}"
+                                                  alt="{{item.name_Product}}"
+                                                  title="Download {{item.name_Product}}"
+                                              />
+                                          </div>
+                                      </a>
+                                      <div class="quick-view">
+                                          <a title="Download code" class="search" [routerLink]="['/detail',item.id,item.iD_Category]"></a>
+                                          <a
+                                              id="mainbody_contentbody_contentpage_rptList_Button4_0"
+                                              title="Yêu thích code này"
+                                              class="heart LikeSuccess"
+                                              href="javascript:__doPostBack('ctl00$ctl00$ctl00$mainbody$contentbody$contentpage$rptList$ctl00$Button4','')"
+                                          ></a>
+                                          <a
+                                              onclick="createCaptcha();"
+                                              id="mainbody_contentbody_contentpage_rptList_Button5_0"
+                                              title="Lưu code lại cho tôi"
+                                              class="compare"
+                                              data-toggle="modal"
+                                              data-target="#LoginForm"
+                                              role="button"
+                                              href="javascript:__doPostBack('ctl00$ctl00$ctl00$mainbody$contentbody$contentpage$rptList$ctl00$Button5','')"
+                                          ></a>
+                                      </div>
+                                      <div class="downview">
+                                          <span class="view-count2">{{item.views}}</span>
+                                          <span class="down-count2">0</span>
+                                      </div>
+                                      <a class="cate" href="android-15.html">{{NameCategory}}</a>
+                                  </div>
+                                  <div class="right-block">
+                                      <a itemprop="url" [routerLink]="['/detail',item.id,item.iD_Category]">
+                                          <h2 itemprop="name" class="product-name bold" title="xem thêm {{item.name_Product}}">{{item.name_Product}}</h2>
+                                      </a>
+                                      <div class="rateit rateit-bg" data-rateit-value="5" data-rateit-readonly="true" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+                                          <meta itemprop="ratingValue" content="5" /><meta itemprop="reviewCount" content="1" /><meta itemprop="bestRating" content="5" />
+                                          <button id="rateit-reset-2" type="button" data-role="none" class="rateit-reset" aria-label="reset rating" aria-controls="rateit-range-2" style="display: none;"><span></span></button>
+                                          <div
+                                              id="rateit-range-2"
+                                              class="rateit-range"
+                                              tabindex="0"
+                                              role="slider"
+                                              aria-label="rating"
+                                              aria-owns="rateit-reset-2"
+                                              aria-valuemin="0"
+                                              aria-valuemax="5"
+                                              aria-valuenow="5"
+                                              aria-readonly="true"
+                                              style="width: 80px; height: 16px;"
+                                          >
+                                              <div class="rateit-empty"></div>
+                                              <div class="rateit-selected" style="height: 16px; width: 80px;"></div>
+                                              <div class="rateit-hover" style="height: 16px;"></div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <meta itemprop="productID" content="26852" />
+                              <meta itemprop="sku" content="26852" />
+                              <meta itemprop="mpn" content="26852" />
+                              <meta itemprop="brand" content="sharecode.vn" />
+                              <meta itemprop="releaseDate" content="23/09/2020 12:03:15 SA" />
+                              <meta itemprop="category" content="Website" />
+                              <meta itemprop="description" content="Chuyển đổi ngôn ngữ, UI sinh động, popup như ios, dùng dialog,.........." />
+                              <span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                  <meta itemprop="priceCurrency" content="XU" />
+                                  <meta itemprop="price" content="15" />
+                                  <link itemprop="availability" href="http://schema.org/InStock" />
+                                  <meta itemprop="priceValidUntil" content="23/09/2035 12:03:15 SA" />
+                                  <meta itemprop="url" content="../source-code/chuyen-doi-ngon-ngu-cho-android-26852.html" />
+                              </span>
+                              <span itemprop="review" itemscope="" itemtype="http://schema.org/Review">
+                                  <meta itemprop="datePublished" content="23/09/2020 12:03:15 SA" />
+                                  <meta itemprop="author" content="khang Tiến" />
+                                  <span itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating">
+                                      <meta itemprop="worstRating" content="1" />
+                                      <meta itemprop="ratingValue" content="5" />
+                                      <meta itemprop="bestRating" content="5" />
+                                  </span>
+                              </span>
+                          </li>
+                      </ul>
+                  </div>
+                  <div class="sortPagiBar">
+                      <div class="bottom-pagination">
+                          <nav id="mainbody_contentbody_contentpage_PaggingBottom">
+                              <ul class="pagination">
+                                  <li class="active"><a href="android-152679.html?page=1">1</a></li>
+                                  <li><a href="android-154658.html?page=2">2</a></li>
+                                  <li><a href="android-159ba9.html?page=3">3</a></li>
+                                  <li><a href="android-15fdb0.html?page=4">4</a></li>
+                                  <li><a href="android-15af4d.html?page=5">5</a></li>
+                                  <li><a href="android-15c575.html?page=6">6</a></li>
+                                  <li><a href="android-154658.html?page=2">»</a></li>
+                                  <li><a href="android-157083.html?page=95"> Trang Cuối </a></li>
+                              </ul>
+                          </nav>
+                      </div>
+                      <div class="sort-product box-sort2">
+                          <select
+                              name="ctl00$ctl00$ctl00$mainbody$contentbody$contentpage$ddlSort"
+                              onchange="javascript:setTimeout('__doPostBack(\'ctl00$ctl00$ctl00$mainbody$contentbody$contentpage$ddlSort\',\'\')', 0)"
+                              id="mainbody_contentbody_contentpage_ddlSort"
+                          >
+                              <option selected="selected" value="New">Mới nhất</option>
+                              <option value="View">Xem nhiều</option>
+                              <option value="Down">Tải nhiều</option>
+                          </select>
+                          <div class="sort-product-icon">
+                              <i class="fa fa-sort-alpha-asc"></i>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <!-- <div id="mainbody_contentbody_contentpage_ucSuggest_upPannel">
+                  <div id="view-product-list" class="view-product-list">
+                      <h2 class="page-heading">
+                          <span id="mainbody_contentbody_contentpage_ucSuggest_divTitle" class="page-heading-title">CODE GỢI Ý CHO BẠN</span>
+                      </h2>
+                      <ul class="row product-list style2 grid">
+                          <li class="col-sx-12 col-sm-3" itemprop="isRelatedTo" itemscope="" itemtype="http://schema.org/Product">
+                              <div class="product-container">
+                                  <div class="left-block">
+                                      <a href="../source-code/code-dang-tin-bds-code-laravel-26823.html">
+                                          <div class="img-box">
+                                              <img
+                                                  class="img-responsive"
+                                                  itemprop="image"
+                                                  src="../FilesUpload/Code/%5blink-download-yeu-cau-quyen-truy-cap%5d-full-code-website-kenh-dang-tin-bat-dong-san-moi-171231.jpg"
+                                                  alt="Full code Website kênh đăng tin bất động sản mới"
+                                                  title="Download Full code Website kênh đăng tin bất động sản mới"
+                                              />
+                                          </div>
+                                      </a>
+                                      <div class="quick-view">
+                                          <a title="Download code" class="search" href="../source-code/code-dang-tin-bds-code-laravel-26823.html#Download"></a>
+                                          <a
+                                              id="mainbody_contentbody_contentpage_ucSuggest_rptOtherCode_Button4_0"
+                                              title="Yêu thích code này"
+                                              class="heart LikeSuccess"
+                                              href="javascript:__doPostBack('ctl00$ctl00$ctl00$mainbody$contentbody$contentpage$ucSuggest$rptOtherCode$ctl00$Button4','')"
+                                          ></a>
+                                          <a
+                                              onclick="createCaptcha();"
+                                              id="mainbody_contentbody_contentpage_ucSuggest_rptOtherCode_Button5_0"
+                                              title="Lưu code lại cho tôi"
+                                              class="compare"
+                                              data-toggle="modal"
+                                              data-target="#LoginForm"
+                                              role="button"
+                                              href="javascript:__doPostBack('ctl00$ctl00$ctl00$mainbody$contentbody$contentpage$ucSuggest$rptOtherCode$ctl00$Button5','')"
+                                          ></a>
+                                      </div>
+                                      <div class="downview">
+                                          <span class="view-count2">171</span>
+                                          <span class="down-count2">0</span>
+                                      </div>
+                                      <a class="cate" href="php-mysql-21.html">PHP &amp; MySQL</a>
+                                  </div>
+                                  <div class="right-block">
+                                      <a itemprop="url" href="../source-code/code-dang-tin-bds-code-laravel-26823.html">
+                                          <h3 itemprop="name" class="product-name bold" title="Download Full code Website kênh đăng tin bất động sản mới">Full code Website kênh đăng tin bất động sản mới</h3>
+                                      </a>
+                                      <div class="rateit rateit-bg" data-rateit-value="5" data-rateit-readonly="true" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+                                          <meta itemprop="ratingValue" content="5" /><meta itemprop="reviewCount" content="1" /><meta itemprop="bestRating" content="5" />
+                                          <button id="rateit-reset-14" type="button" data-role="none" class="rateit-reset" aria-label="reset rating" aria-controls="rateit-range-14" style="display: none;"><span></span></button>
+                                          <div
+                                              id="rateit-range-14"
+                                              class="rateit-range"
+                                              tabindex="0"
+                                              role="slider"
+                                              aria-label="rating"
+                                              aria-owns="rateit-reset-14"
+                                              aria-valuemin="0"
+                                              aria-valuemax="5"
+                                              aria-valuenow="5"
+                                              aria-readonly="true"
+                                              style="width: 80px; height: 16px;"
+                                          >
+                                              <div class="rateit-empty"></div>
+                                              <div class="rateit-selected" style="height: 16px; width: 80px;"></div>
+                                              <div class="rateit-hover" style="height: 16px;"></div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <meta itemprop="productID" content="26823" />
+                              <meta itemprop="sku" content="26823" />
+                              <meta itemprop="mpn" content="26823" />
+                              <meta itemprop="brand" content="sharecode.vn" />
+                              <meta itemprop="releaseDate" content="19/09/2020 8:55:33 SA" />
+                              <meta itemprop="category" content="Website" />
+                              <meta itemprop="description" content="Full source code demo website bất động sản trên nền php laravel mới, giao diện cổ có thể xây dựng mới giao diện...." />
+                              <span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                  <meta itemprop="priceCurrency" content="XU" />
+                                  <meta itemprop="price" content="1200" />
+                                  <link itemprop="availability" href="http://schema.org/InStock" />
+                                  <meta itemprop="priceValidUntil" content="19/09/2035 8:55:33 SA" />
+                                  <meta itemprop="url" content="../source-code/code-dang-tin-bds-code-laravel-26823.html" />
+                              </span>
+                              <span itemprop="review" itemscope="" itemtype="http://schema.org/Review">
+                                  <meta itemprop="datePublished" content="19/09/2020 8:55:33 SA" />
+                                  <meta itemprop="author" content="vương" />
+                                  <span itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating">
+                                      <meta itemprop="worstRating" content="1" />
+                                      <meta itemprop="ratingValue" content="5" />
+                                      <meta itemprop="bestRating" content="5" />
+                                  </span>
+                              </span>
+                          </li>
+
+                          <li class="col-sx-12 col-sm-3" itemprop="isRelatedTo" itemscope="" itemtype="http://schema.org/Product">
+                              <div class="product-container">
+                                  <div class="left-block">
+                                      <a href="../source-code/source-code-quan-ly-hoa-chat-xet-nghiem-26822.html">
+                                          <div class="img-box">
+                                              <img
+                                                  class="img-responsive"
+                                                  itemprop="image"
+                                                  src="../FilesUpload/Code/source-code-quan-ly-hoa-chat-xet-nghiem-c-8290.jpg"
+                                                  alt="Source code Quản lý hóa chất xét nghiệm C#"
+                                                  title="Download Source code Quản lý hóa chất xét nghiệm C#"
+                                              />
+                                          </div>
+                                      </a>
+                                      <div class="quick-view">
+                                          <a title="Download code" class="search" href="../source-code/source-code-quan-ly-hoa-chat-xet-nghiem-26822.html#Download"></a>
+                                          <a
+                                              id="mainbody_contentbody_contentpage_ucSuggest_rptOtherCode_Button4_1"
+                                              title="Yêu thích code này"
+                                              class="heart LikeSuccess"
+                                              href="javascript:__doPostBack('ctl00$ctl00$ctl00$mainbody$contentbody$contentpage$ucSuggest$rptOtherCode$ctl01$Button4','')"
+                                          ></a>
+                                          <a
+                                              onclick="createCaptcha();"
+                                              id="mainbody_contentbody_contentpage_ucSuggest_rptOtherCode_Button5_1"
+                                              title="Lưu code lại cho tôi"
+                                              class="compare"
+                                              data-toggle="modal"
+                                              data-target="#LoginForm"
+                                              role="button"
+                                              href="javascript:__doPostBack('ctl00$ctl00$ctl00$mainbody$contentbody$contentpage$ucSuggest$rptOtherCode$ctl01$Button5','')"
+                                          ></a>
+                                      </div>
+                                      <div class="downview">
+                                          <span class="view-count2">108</span>
+                                          <span class="down-count2">3</span>
+                                      </div>
+                                      <a class="cate" href="visual-c-17.html">Visual C#</a>
+                                  </div>
+                                  <div class="right-block">
+                                      <a itemprop="url" href="../source-code/source-code-quan-ly-hoa-chat-xet-nghiem-26822.html">
+                                          <h3 itemprop="name" class="product-name bold" title="Download Source code Quản lý hóa chất xét nghiệm C#">Source code Quản lý hóa chất xét nghiệm C#</h3>
+                                      </a>
+                                      <div class="rateit rateit-bg" data-rateit-value="5" data-rateit-readonly="true" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+                                          <meta itemprop="ratingValue" content="5" /><meta itemprop="reviewCount" content="1" /><meta itemprop="bestRating" content="5" />
+                                          <button id="rateit-reset-15" type="button" data-role="none" class="rateit-reset" aria-label="reset rating" aria-controls="rateit-range-15" style="display: none;"><span></span></button>
+                                          <div
+                                              id="rateit-range-15"
+                                              class="rateit-range"
+                                              tabindex="0"
+                                              role="slider"
+                                              aria-label="rating"
+                                              aria-owns="rateit-reset-15"
+                                              aria-valuemin="0"
+                                              aria-valuemax="5"
+                                              aria-valuenow="5"
+                                              aria-readonly="true"
+                                              style="width: 80px; height: 16px;"
+                                          >
+                                              <div class="rateit-empty"></div>
+                                              <div class="rateit-selected" style="height: 16px; width: 80px;"></div>
+                                              <div class="rateit-hover" style="height: 16px;"></div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <meta itemprop="productID" content="26822" />
+                              <meta itemprop="sku" content="26822" />
+                              <meta itemprop="mpn" content="26822" />
+                              <meta itemprop="brand" content="sharecode.vn" />
+                              <meta itemprop="releaseDate" content="18/09/2020 2:13:20 CH" />
+                              <meta itemprop="category" content="Phần mềm - Ứng dụng" />
+                              <meta itemprop="description" content="Source code Quản lý hóa chất xét nghiệm cho khoa xét nghiệm đơn giản với các chức năng đơn giản" />
+                              <span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                  <meta itemprop="priceCurrency" content="XU" />
+                                  <meta itemprop="price" content="10" />
+                                  <link itemprop="availability" href="http://schema.org/InStock" />
+                                  <meta itemprop="priceValidUntil" content="18/09/2035 2:13:20 CH" />
+                                  <meta itemprop="url" content="../source-code/source-code-quan-ly-hoa-chat-xet-nghiem-26822.html" />
+                              </span>
+                              <span itemprop="review" itemscope="" itemtype="http://schema.org/Review">
+                                  <meta itemprop="datePublished" content="18/09/2020 2:13:20 CH" />
+                                  <meta itemprop="author" content="Nam" />
+                                  <span itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating">
+                                      <meta itemprop="worstRating" content="1" />
+                                      <meta itemprop="ratingValue" content="5" />
+                                      <meta itemprop="bestRating" content="5" />
+                                  </span>
+                              </span>
+                          </li>
+
+                          <li class="col-sx-12 col-sm-3" itemprop="isRelatedTo" itemscope="" itemtype="http://schema.org/Product">
+                              <div class="product-container">
+                                  <div class="left-block">
+                                      <a href="../source-code/web-ban-noi-thattu-bep-aspnet-mvc-26820.html">
+                                          <div class="img-box">
+                                              <img
+                                                  class="img-responsive"
+                                                  itemprop="image"
+                                                  src="../FilesUpload/Code/full-code-web-ban-noi-that-tu-bep-asp.net-mvc-155542.jpg"
+                                                  alt="Full code Web bán nội thất tủ bếp ASp.Net MVC"
+                                                  title="Download Full code Web bán nội thất tủ bếp ASp.Net MVC"
+                                              />
+                                          </div>
+                                      </a>
+                                      <div class="quick-view">
+                                          <a title="Download code" class="search" href="../source-code/web-ban-noi-thattu-bep-aspnet-mvc-26820.html#Download"></a>
+                                          <a
+                                              id="mainbody_contentbody_contentpage_ucSuggest_rptOtherCode_Button4_2"
+                                              title="Yêu thích code này"
+                                              class="heart LikeSuccess"
+                                              href="javascript:__doPostBack('ctl00$ctl00$ctl00$mainbody$contentbody$contentpage$ucSuggest$rptOtherCode$ctl02$Button4','')"
+                                          ></a>
+                                          <a
+                                              onclick="createCaptcha();"
+                                              id="mainbody_contentbody_contentpage_ucSuggest_rptOtherCode_Button5_2"
+                                              title="Lưu code lại cho tôi"
+                                              class="compare"
+                                              data-toggle="modal"
+                                              data-target="#LoginForm"
+                                              role="button"
+                                              href="javascript:__doPostBack('ctl00$ctl00$ctl00$mainbody$contentbody$contentpage$ucSuggest$rptOtherCode$ctl02$Button5','')"
+                                          ></a>
+                                      </div>
+                                      <div class="downview">
+                                          <span class="view-count2">197</span>
+                                          <span class="down-count2">0</span>
+                                      </div>
+                                      <a class="cate" href="aspaspnet-16.html">Asp/Asp.Net</a>
+                                  </div>
+                                  <div class="right-block">
+                                      <a itemprop="url" href="../source-code/web-ban-noi-thattu-bep-aspnet-mvc-26820.html">
+                                          <h3 itemprop="name" class="product-name bold" title="Download Full code Web bán nội thất tủ bếp ASp.Net MVC">Full code Web bán nội thất tủ bếp ASp.Net MVC</h3>
+                                      </a>
+                                      <div class="rateit rateit-bg" data-rateit-value="5" data-rateit-readonly="true" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+                                          <meta itemprop="ratingValue" content="5" /><meta itemprop="reviewCount" content="1" /><meta itemprop="bestRating" content="5" />
+                                          <button id="rateit-reset-16" type="button" data-role="none" class="rateit-reset" aria-label="reset rating" aria-controls="rateit-range-16" style="display: none;"><span></span></button>
+                                          <div
+                                              id="rateit-range-16"
+                                              class="rateit-range"
+                                              tabindex="0"
+                                              role="slider"
+                                              aria-label="rating"
+                                              aria-owns="rateit-reset-16"
+                                              aria-valuemin="0"
+                                              aria-valuemax="5"
+                                              aria-valuenow="5"
+                                              aria-readonly="true"
+                                              style="width: 80px; height: 16px;"
+                                          >
+                                              <div class="rateit-empty"></div>
+                                              <div class="rateit-selected" style="height: 16px; width: 80px;"></div>
+                                              <div class="rateit-hover" style="height: 16px;"></div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <meta itemprop="productID" content="26820" />
+                              <meta itemprop="sku" content="26820" />
+                              <meta itemprop="mpn" content="26820" />
+                              <meta itemprop="brand" content="sharecode.vn" />
+                              <meta itemprop="releaseDate" content="18/09/2020 8:56:01 SA" />
+                              <meta itemprop="category" content="Website" />
+                              <meta itemprop="description" content="Full code Website bán nội thất tủ bếp xây dựng trên công ngệ asp.net mcv c# sql server code first,entity freamwork" />
+                              <span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                  <meta itemprop="priceCurrency" content="XU" />
+                                  <meta itemprop="price" content="100" />
+                                  <link itemprop="availability" href="http://schema.org/InStock" />
+                                  <meta itemprop="priceValidUntil" content="18/09/2035 8:56:01 SA" />
+                                  <meta itemprop="url" content="../source-code/web-ban-noi-thattu-bep-aspnet-mvc-26820.html" />
+                              </span>
+                              <span itemprop="review" itemscope="" itemtype="http://schema.org/Review">
+                                  <meta itemprop="datePublished" content="18/09/2020 8:56:01 SA" />
+                                  <meta itemprop="author" content="Nguyễn Danh Ngọc" />
+                                  <span itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating">
+                                      <meta itemprop="worstRating" content="1" />
+                                      <meta itemprop="ratingValue" content="5" />
+                                      <meta itemprop="bestRating" content="5" />
+                                  </span>
+                              </span>
+                          </li>
+
+                          <li class="col-sx-12 col-sm-3" itemprop="isRelatedTo" itemscope="" itemtype="http://schema.org/Product">
+                              <div class="product-container">
+                                  <div class="left-block">
+                                      <a href="../source-code/website-gioi-thieu-va-ban-my-pham-full-source-code-wordpress-26819.html">
+                                          <div class="img-box">
+                                              <img
+                                                  class="img-responsive"
+                                                  itemprop="image"
+                                                  src="../FilesUpload/Code/website-gioi-thieu-va-ban-my-pham---full-source-code-wordpress-141352.jpg"
+                                                  alt="Website giới thiệu và bán mỹ phẩm - Full source code Wordpress"
+                                                  title="Download Website giới thiệu và bán mỹ phẩm - Full source code Wordpress"
+                                              />
+                                          </div>
+                                      </a>
+                                      <div class="quick-view">
+                                          <a title="Download code" class="search" href="../source-code/website-gioi-thieu-va-ban-my-pham-full-source-code-wordpress-26819.html#Download"></a>
+                                          <a
+                                              id="mainbody_contentbody_contentpage_ucSuggest_rptOtherCode_Button4_3"
+                                              title="Yêu thích code này"
+                                              class="heart LikeSuccess"
+                                              href="javascript:__doPostBack('ctl00$ctl00$ctl00$mainbody$contentbody$contentpage$ucSuggest$rptOtherCode$ctl03$Button4','')"
+                                          ></a>
+                                          <a
+                                              onclick="createCaptcha();"
+                                              id="mainbody_contentbody_contentpage_ucSuggest_rptOtherCode_Button5_3"
+                                              title="Lưu code lại cho tôi"
+                                              class="compare"
+                                              data-toggle="modal"
+                                              data-target="#LoginForm"
+                                              role="button"
+                                              href="javascript:__doPostBack('ctl00$ctl00$ctl00$mainbody$contentbody$contentpage$ucSuggest$rptOtherCode$ctl03$Button5','')"
+                                          ></a>
+                                      </div>
+                                      <div class="downview">
+                                          <span class="view-count2">144</span>
+                                          <span class="down-count2">0</span>
+                                      </div>
+                                      <a class="cate" href="wordpress-29.html">WordPress</a>
+                                  </div>
+                                  <div class="right-block">
+                                      <a itemprop="url" href="../source-code/website-gioi-thieu-va-ban-my-pham-full-source-code-wordpress-26819.html">
+                                          <h3 itemprop="name" class="product-name bold" title="Download Website giới thiệu và bán mỹ phẩm - Full source code Wordpress">Website giới thiệu và bán mỹ phẩm - Full source code Wordpress</h3>
+                                      </a>
+                                      <div class="rateit rateit-bg" data-rateit-value="5" data-rateit-readonly="true" itemprop="aggregateRating" itemscope="" itemtype="http://schema.org/AggregateRating">
+                                          <meta itemprop="ratingValue" content="5" /><meta itemprop="reviewCount" content="1" /><meta itemprop="bestRating" content="5" />
+                                          <button id="rateit-reset-17" type="button" data-role="none" class="rateit-reset" aria-label="reset rating" aria-controls="rateit-range-17" style="display: none;"><span></span></button>
+                                          <div
+                                              id="rateit-range-17"
+                                              class="rateit-range"
+                                              tabindex="0"
+                                              role="slider"
+                                              aria-label="rating"
+                                              aria-owns="rateit-reset-17"
+                                              aria-valuemin="0"
+                                              aria-valuemax="5"
+                                              aria-valuenow="5"
+                                              aria-readonly="true"
+                                              style="width: 80px; height: 16px;"
+                                          >
+                                              <div class="rateit-empty"></div>
+                                              <div class="rateit-selected" style="height: 16px; width: 80px;"></div>
+                                              <div class="rateit-hover" style="height: 16px;"></div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <meta itemprop="productID" content="26819" />
+                              <meta itemprop="sku" content="26819" />
+                              <meta itemprop="mpn" content="26819" />
+                              <meta itemprop="brand" content="sharecode.vn" />
+                              <meta itemprop="releaseDate" content="17/09/2020 2:13:52 CH" />
+                              <meta itemprop="category" content="Website" />
+                              <meta itemprop="description" content="Website giới thiệu và bán mỹ phẩm sử dụng wordpres, thích hợp cho mọi người." />
+                              <span itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+                                  <meta itemprop="priceCurrency" content="XU" />
+                                  <meta itemprop="price" content="300" />
+                                  <link itemprop="availability" href="http://schema.org/InStock" />
+                                  <meta itemprop="priceValidUntil" content="17/09/2035 2:13:52 CH" />
+                                  <meta itemprop="url" content="../source-code/website-gioi-thieu-va-ban-my-pham-full-source-code-wordpress-26819.html" />
+                              </span>
+                              <span itemprop="review" itemscope="" itemtype="http://schema.org/Review">
+                                  <meta itemprop="datePublished" content="17/09/2020 2:13:52 CH" />
+                                  <meta itemprop="author" content="toicntt" />
+                                  <span itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating">
+                                      <meta itemprop="worstRating" content="1" />
+                                      <meta itemprop="ratingValue" content="5" />
+                                      <meta itemprop="bestRating" content="5" />
+                                  </span>
+                              </span>
+                          </li>
+                      </ul>
+                  </div>
+              </div> -->
+          </div>
+          <div class="column col-xs-12 col-sm-3" id="left_column">
+              <div class="block left-module">
+                  <p class="title_block">Sản Phẩm Nổi Bật</p>
+                  <div class="block_content">
+                      <ul class="products-block best-sell">
+                          <li *ngFor="let item of ProductByCateHot" >
+                              <div class="products-block-left">
+                                  <a [routerLink]="['/detail',item.id,item.iD_Category]">
+                                      <img
+                                          src="{{item.images}}"
+                                          alt="{{item.name_Product}}"
+                                          title="{{item.name_Product}}"
+                                      />
+                                  </a>
+                              </div>
+                              <div class="products-block-right">
+                                  <p class="product-name">
+                                      <a [routerLink]="['/detail',item.id,item.iD_Category]"> </a>
+                                  </p>
+                                  <h3 class="title2 bold" title="{{item.name_Product}}">
+                                      <a [routerLink]="['/detail',item.id,item.iD_Category]">{{item.name_Product}}</a>
+                                  </h3>
+                                  <a [routerLink]="['/detail',item.id,item.iD_Category]"> </a>
+                                  <p></p>
+                                  <div class="rateit rateit-bg" data-rateit-value="5" data-rateit-readonly="true">
+                                      <button id="rateit-reset-18" type="button" data-role="none" class="rateit-reset" aria-label="reset rating" aria-controls="rateit-range-18" style="display: none;"><span></span></button>
+                                      <div
+                                          id="rateit-range-18"
+                                          class="rateit-range"
+                                          tabindex="0"
+                                          role="slider"
+                                          aria-label="rating"
+                                          aria-owns="rateit-reset-18"
+                                          aria-valuemin="0"
+                                          aria-valuemax="5"
+                                          aria-valuenow="5"
+                                          aria-readonly="true"
+                                          style="width: 80px; height: 16px;"
+                                      >
+                                          <div class="rateit-empty"></div>
+                                          <div class="rateit-selected" style="height: 16px; width: 80px;"></div>
+                                          <div class="rateit-hover" style="height: 16px;"></div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <div class="products-block-bottom">
+                                  <div>
+                                      <a class="cate" href="android-15.html">{{NameCategory}}</a>
+                                      <span class="alignright view-count">{{item.views}}</span>
+                                  </div>
+                              </div>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+
+              <div class="block left-module">
+                  <p class="title_block">THÔNG BÁO</p>
+                  <div class="block_content">
+                      <div class="layered layered-category">
+                          <div class="layered-content">
+                              <ul class="tree-menu">
+                                  <li>
+                                      <a href="../su-kien/%5bsieu-khuyen-mai%5d-dich-vu-may-chu-mua-1-tang-1-den-het-2902-18.html" title="[SIÊU KHUYẾN MÃI] Dịch vụ máy chủ MUA 1 TẶNG 1 đến hết 29/02 - Sự kiện">
+                                          <h3 class="title2 bullet">[SIÊU KHUYẾN MÃI] Dịch vụ máy chủ MUA 1 TẶNG 1 đến hết 29/02<span class="ic_hot"></span></h3>
+                                      </a>
+                                  </li>
+
+                                  <li>
+                                      <a href="../cau-hoi/cach-upload-code-hieu-qua-va-toi-uu-seo-10.html" title="Cách UPLOAD code hiệu quả và tối ưu SEO - FAQ">
+                                          <h3 class="title2 bullet">Cách UPLOAD code hiệu quả và tối ưu SEO<span class="ic_hot"></span></h3>
+                                      </a>
+                                  </li>
+
+                                  <li>
+                                      <a href="../cau-hoi/meo-giup-ban-tang-doanh-thu-ban-source-code-9.html" title="Mẹo giúp bạn TĂNG DOANH THU bán source code - FAQ">
+                                          <h3 class="title2 bullet">Mẹo giúp bạn TĂNG DOANH THU bán source code<span class="ic_hot"></span></h3>
+                                      </a>
+                                  </li>
+
+                                  <li>
+                                      <a href="../cau-hoi/huong-dan-nap-tien-vao-tai-khoan-8.html" title="Hướng dẫn NẠP TIỀN vào tài khoản - FAQ">
+                                          <h3 class="title2 bullet">Hướng dẫn NẠP TIỀN vào tài khoản<span class=""></span></h3>
+                                      </a>
+                                  </li>
+
+                                  <li>
+                                      <a href="../cau-hoi/huong-dan-rut-tien-tu-tai-khoan-7.html" title="Hướng dẫn RÚT TIỀN từ tài khoản - FAQ">
+                                          <h3 class="title2 bullet">Hướng dẫn RÚT TIỀN từ tài khoản<span class=""></span></h3>
+                                      </a>
+                                  </li>
+
+                                  <li>
+                                      <a href="../cau-hoi/huong-dan-cach-chay-website-aspnet-tren-localhost-2.html" title="Hướng dẫn cách chạy website ASP.Net trên Localhost - FAQ">
+                                          <h3 class="title2 bullet">Hướng dẫn cách chạy website ASP.Net trên Localhost<span class=""></span></h3>
+                                      </a>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<script src="assets/frontend/js/floater_xlib.js"></script>
+        <script type="text/javascript">
+            var slideTime = 600;
+            var floatAtBottom = false;
+            function pepsi_floating_init() {
+                xMoveTo("floating_banner_right", 887 - (1024 - screen.width), 0);
+
+                winOnResize(); // set initial position
+                xAddEventListener(window, "resize", winOnResize, false);
+                xAddEventListener(window, "scroll", winOnScroll, false);
+            }
+            function winOnResize() {
+                checkScreenWidth();
+                winOnScroll(); // initial slide
+            }
+            function winOnScroll() {
+                var y = xScrollTop();
+                if (floatAtBottom) {
+                    y += xClientHeight() - xHeight("floating_banner_left");
+                }
+                document.getElementById("floating_banner_left").style.position = "fixed";
+                document.getElementById("floating_banner_right").style.position = "fixed";
+                if (y >= 185) {
+                    xSlideTo("floating_banner_left", (document.body.clientWidth - 20 - 1170) / 2 - 150, 60, slideTime);
+                    xSlideTo("floating_banner_right", (document.body.clientWidth - 20 + 1170) / 2 + 50, 60, slideTime);
+                } else {
+                    xSlideTo("floating_banner_left", (document.body.clientWidth - 20 - 1170) / 2 - 150, 300 - y, slideTime);
+                    xSlideTo("floating_banner_right", (document.body.clientWidth - 20 + 1170) / 2 + 50, 300 - y, slideTime);
+                }
+            }
+            function checkScreenWidth() {
+                if (document.body.clientWidth < 1530) {
+                    document.getElementById("floating_banner_left").style.display = "none";
+                    document.getElementById("floating_banner_right").style.display = "none";
+                    if (document.getElementById("bannerCenter") != null) document.getElementById("bannerCenter").style.display = "block";
+                } else {
+                    document.getElementById("floating_banner_left").style.display = "";
+                    document.getElementById("floating_banner_right").style.display = "";
+                    if (document.getElementById("bannerCenter") != null) document.getElementById("bannerCenter").style.display = "none";
+                }
+            }
+        </script>
+        <div id="floating_banner_left" style="text-align: right; position: fixed; overflow: hidden; width: 120px; z-index: 99999; left: 154.5px; top: 166.667px;">
+            <div id="floating_banner_left_content">
+                <a href="kien-thuc-lap-trinh/dich-vu-thiet-ke-website-chuyen-nghiep-voi-gia-cuc-re-va-nhieu-uu-dai-tai-sharecodevn-880.html" target="_blank">
+                    <img src="assets/images/thiet-ke-web-gia-re.jpg" border="0" width="120" alt="" />
+                </a>
+                <br />
+            </div>
+        </div>
+        <div id="floating_banner_right" style="text-align: left; position: fixed; overflow: hidden; width: 120px; z-index: 99999; left: 1524.5px; top: 166.667px;">
+            <div id="Div2">
+                <a href="https://topcode.vn/" target="_blank"> <img src="assets/images/Ra-mat-topcode.jpg" border="0" width="120" alt="" /></a><br />
+            </div>
+        </div>
+        <script>
+            pepsi_floating_init();
+        </script>

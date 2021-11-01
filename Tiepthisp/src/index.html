@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>
+    Siêu chợ
+    </title>
+    <base href="/">
+    <link rel="shortcut icon" href="/assets/frontend/images/logo1.png" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="/assets/frontend/lib/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/frontend/lib/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/frontend/lib/select2/css/select2.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/frontend/lib/owl.carousel/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/frontend/lib/jquery-ui/jquery-ui.min.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/frontend/css/animate.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/frontend/css/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/frontend/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/frontend/lib/jquery.bxslider/jquery.bxslider.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/frontend/css/responsive.css" />
+    <style type="text/css"></style>
+    <style type="text/css" data-fbcssmodules="css:fb.css.basecss:fb.css.dialog css:fb.css.iframewidget">
+        .fb_hidden {
+            position: absolute;
+            top: -10000px;
+            z-index: 10001;
+        }
+        .fb_reposition {
+            overflow: hidden;
+            position: relative;
+        }
+        .fb_invisible {
+            display: none;
+        }
+        .fb_reset {
+            background: none;
+            border: 0;
+            border-spacing: 0;
+            color: #000;
+            cursor: auto;
+            direction: ltr;
+            font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+            font-size: 11px;
+            font-style: normal;
+            font-variant: normal;
+            font-weight: normal;
+            letter-spacing: normal;
+            line-height: 1;
+            margin: 0;
+            overflow: visible;
+            padding: 0;
+            text-align: left;
+            text-decoration: none;
+            text-indent: 0;
+            text-shadow: none;
+            text-transform: none;
+            visibility: visible;
+            white-space: normal;
+            word-spacing: normal;
+        }
+        .fb_reset > div {
+            overflow: hidden;
+        }
+        @keyframes fb_transform {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .fb_animate {
+            animation: fb_transform 0.3s forwards;
+        }
+        .fb_dialog {
+            background: rgba(82, 82, 82, 0.7);
+            position: absolute;
+            top: -10000px;
+            z-index: 10001;
+        }
+        .fb_dialog_advanced {
+            border-radius: 8px;
+            padding: 10px;
+        }
+        .fb_dialog_content {
+            background: #fff;
+            color: #373737;
+        }
+        .fb_dialog_close_icon {
+            background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 0 transparent;
+            cursor: pointer;
+            display: block;
+            height: 15px;
+            position: absolute;
+            right: 18px;
+            top: 17px;
+            width: 15px;
+        }
+        .fb_dialog_mobile .fb_dialog_close_icon {
+            left: 5px;
+            right: auto;
+            top: 5px;
+        }
+        .fb_dialog_padding {
+            background-color: transparent;
+            position: absolute;
+            width: 1px;
+            z-index: -1;
+        }
+        .fb_dialog_close_icon:hover {
+            background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -15px transparent;
+        }
+        .fb_dialog_close_icon:active {
+            background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yq/r/IE9JII6Z1Ys.png) no-repeat scroll 0 -30px transparent;
+        }
+        .fb_dialog_iframe {
+            line-height: 0;
+        }
+        .fb_dialog_content .dialog_title {
+            background: #6d84b4;
+            border: 1px solid #365899;
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .fb_dialog_content .dialog_title > span {
+            background: url(https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/Cou7n-nqK52.gif) no-repeat 5px 50%;
+            float: left;
+            padding: 5px 0 7px 26px;
+        }
+        body.fb_hidden {
+            height: 100%;
+            left: 0;
+            margin: 0;
+            overflow: visible;
+            position: absolute;
+            top: -10000px;
+            transform: none;
+            width: 100%;
+        }
+        .fb_dialog.fb_dialog_mobile.loading {
+            background: url(https://static.xx.fbcdn.net/rsrc.php/v3/ya/r/3rhSv5V8j3o.gif) white no-repeat 50% 50%;
+            min-height: 100%;
+            min-width: 100%;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            z-index: 10001;
+        }
+        .fb_dialog.fb_dialog_mobile.loading.centered {
+            background: none;
+            height: auto;
+            min-height: initial;
+            min-width: initial;
+            width: auto;
+        }
+        .fb_dialog.fb_dialog_mobile.loading.centered #fb_dialog_loader_spinner {
+            width: 100%;
+        }
+        .fb_dialog.fb_dialog_mobile.loading.centered .fb_dialog_content {
+            background: none;
+        }
+        .loading.centered #fb_dialog_loader_close {
+            clear: both;
+            color: #fff;
+            display: block;
+            font-size: 18px;
+            padding-top: 20px;
+        }
+        #fb-root #fb_dialog_ipad_overlay {
+            background: rgba(0, 0, 0, 0.4);
+            bottom: 0;
+            left: 0;
+            min-height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+            z-index: 10000;
+        }
+        #fb-root #fb_dialog_ipad_overlay.hidden {
+            display: none;
+        }
+        .fb_dialog.fb_dialog_mobile.loading iframe {
+            visibility: hidden;
+        }
+        .fb_dialog_mobile .fb_dialog_iframe {
+            position: sticky;
+            top: 0;
+        }
+        .fb_dialog_content .dialog_header {
+            background: linear-gradient(from(#738aba), to(#2c4987));
+            border-bottom: 1px solid;
+            border-color: #043b87;
+            box-shadow: white 0 1px 1px -1px inset;
+            color: #fff;
+            font: bold 14px Helvetica, sans-serif;
+            text-overflow: ellipsis;
+            text-shadow: rgba(0, 30, 84, 0.296875) 0 -1px 0;
+            vertical-align: middle;
+            white-space: nowrap;
+        }
+        .fb_dialog_content .dialog_header table {
+            height: 43px;
+            width: 100%;
+        }
+        .fb_dialog_content .dialog_header td.header_left {
+            font-size: 12px;
+            padding-left: 5px;
+            vertical-align: middle;
+            width: 60px;
+        }
+        .fb_dialog_content .dialog_header td.header_right {
+            font-size: 12px;
+            padding-right: 5px;
+            vertical-align: middle;
+            width: 60px;
+        }
+        .fb_dialog_content .touchable_button {
+            background: linear-gradient(from(#4267b2), to(#2a4887));
+            background-clip: padding-box;
+            border: 1px solid #29487d;
+            border-radius: 3px;
+            display: inline-block;
+            line-height: 18px;
+            margin-top: 3px;
+            max-width: 85px;
+            padding: 4px 12px;
+            position: relative;
+        }
+        .fb_dialog_content .dialog_header .touchable_button input {
+            background: none;
+            border: none;
+            color: #fff;
+            font: bold 12px Helvetica, sans-serif;
+            margin: 2px -12px;
+            padding: 2px 6px 3px 6px;
+            text-shadow: rgba(0, 30, 84, 0.296875) 0 -1px 0;
+        }
+        .fb_dialog_content .dialog_header .header_center {
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            line-height: 18px;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .fb_dialog_content .dialog_content {
+            background: url(https://static.xx.fbcdn.net/rsrc.php/v3/y9/r/jKEcVPZFk-2.gif) no-repeat 50% 50%;
+            border: 1px solid #4a4a4a;
+            border-bottom: 0;
+            border-top: 0;
+            height: 150px;
+        }
+        .fb_dialog_content .dialog_footer {
+            background: #f5f6f7;
+            border: 1px solid #4a4a4a;
+            border-top-color: #ccc;
+            height: 40px;
+        }
+        #fb_dialog_loader_close {
+            float: left;
+        }
+        .fb_dialog.fb_dialog_mobile .fb_dialog_close_icon {
+            visibility: hidden;
+        }
+        #fb_dialog_loader_spinner {
+            animation: rotateSpinner 1.2s linear infinite;
+            background-color: transparent;
+            background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yD/r/t-wz8gw1xG1.png);
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            height: 24px;
+            width: 24px;
+        }
+        @keyframes rotateSpinner {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .fb_iframe_widget {
+            display: inline-block;
+            position: relative;
+        }
+        .fb_iframe_widget span {
+            display: inline-block;
+            position: relative;
+            text-align: justify;
+        }
+        .fb_iframe_widget iframe {
+            position: absolute;
+        }
+        .fb_iframe_widget_fluid_desktop,
+        .fb_iframe_widget_fluid_desktop span,
+        .fb_iframe_widget_fluid_desktop iframe {
+            max-width: 100%;
+        }
+        .fb_iframe_widget_fluid_desktop iframe {
+            min-width: 220px;
+            position: relative;
+        }
+        .fb_iframe_widget_lift {
+            z-index: 1;
+        }
+        .fb_iframe_widget_fluid {
+            display: inline;
+        }
+        .fb_iframe_widget_fluid span {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body class="home" cz-shortcut-listen="true">
+    <div id="fb-root" class="fb_reset">
+      <div style="position: absolute; top: -10000px; width: 0px; height: 0px;"><div></div></div>
+    </div>
+    <script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js"></script>
+    <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: "1938824166400762",
+                cookie: true,
+                xfbml: true,
+                version: "v2.8",
+            });
+            FB.AppEvents.logPageView();
+        };
+
+        (function (d, s, id) {
+            var js,
+                fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        })(document, "script", "facebook-jssdk");
+    </script>
+    <form method="post" action="/" id="form1">
+      <app-root></app-root>
+    </form>
+
+    <a href="#" class="scroll_top" title="Lên đầu" style="display: none;"></a>
+    <!-- Script-->
+    <script type="text/javascript" src="/assets/frontend/lib/jquery/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="/assets/frontend/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/assets/frontend/lib/select2/js/select2.min.js"></script>
+    <script type="text/javascript" src="/assets/frontend/lib/owl.carousel/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="/assets/frontend/js/jquery.actual.min.js"></script>
+    <script type="text/javascript" src="/assets/frontend/js/theme-script.js"></script>
+    <script type="text/javascript" src="/assets/frontend/lib/jquery-ui/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        $("#slSearch").on("change", function () {
+            $("#hdLangFilter").val($("#slSearch").val());
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(".carousel").carousel({
+            interval: 5000,
+        });
+        $(document).ready(function () {
+            //duy tri alive: 5 minutes
+            setInterval("KeepSessionAlive()", 300000);
+            $(".txt-auto").autocomplete({
+                source: TagSuggest,
+                minLength: 2,
+                html: true,
+            });
+            //chat face
+            $(".hisella-messages")
+                .animate({ bottom: "-350px" })
+                .animate({ right: "-30px" }, 400, function () {
+                    $("#hisella-facebook").css("opacity", 0);
+                });
+            $("#hisella-minimize").click(function () {
+                if ($("#hisella-facebook").css("opacity") == 0) {
+                    $("#hisella-facebook").css("opacity", 1);
+                    $(".hisella-messages").animate({ right: "0" }).animate({ bottom: "0" });
+                } else {
+                    $(".hisella-messages")
+                        .animate({ bottom: "-350px" })
+                        .animate({ right: "-30px" }, 400, function () {
+                            $("#hisella-facebook").css("opacity", 0);
+                        });
+                }
+            });
+        });
+        //auto
+        (function ($) {
+            var proto = $.ui.autocomplete.prototype,
+                initSource = proto._initSource;
+            function filter(array, term) {
+                var matcher = new RegExp($.ui.autocomplete.escapeRegex(term), "i");
+                return $.grep(array, function (value) {
+                    return matcher.test(
+                        $("<div>")
+                            .html(value.label || value.value || value)
+                            .text()
+                    );
+                });
+            }
+            $.extend(proto, {
+                _initSource: function () {
+                    if (this.options.html && $.isArray(this.options.source)) {
+                        this.source = function (request, response) {
+                            response(filter(this.options.source, request.term));
+                        };
+                    } else {
+                        initSource.call(this);
+                    }
+                },
+                _renderItem: function (ul, item) {
+                    return $("<li></li>")
+                        .data("item.autocomplete", item)
+                        .append($("<a></a>")[this.options.html ? "html" : "text"](item.label))
+                        .appendTo(ul);
+                },
+            });
+        })(jQuery);
+        var cache = {};
+        function TagSuggest(request, response) {
+            var term = request.term.toLowerCase();
+            if (term in cache) {
+                response(cache[term]);
+                return;
+            }
+            $.ajax({
+                type: "POST",
+                url: "/Ajax/TagSuggest.aspx/TagAutocomplete",
+                data: '{tagname: "' + term + '"}',
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                async: false,
+                success: function (data) {
+                    var suggestions = [];
+                    var results = data.d;
+                    $.each(results, function (index, item) {
+                        try {
+                            var s = item.toLowerCase();
+                            suggestions.push({ label: s.replace(term, "<b>" + term + "</b>"), value: s });
+                        } catch (e) {}
+                    });
+                    cache[term] = suggestions;
+                    response(suggestions);
+                },
+            });
+        }
+        //fix đường dẫn khi login bằng facebook
+        if (window.location.hash == "#_=_") {
+            history.replaceState ? history.replaceState(null, null, window.location.href.split("#")[0]) : (window.location.hash = "");
+        }
+        function KeepSessionAlive() {
+            url = "/KeepSessionAlive.ashx?";
+            var xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("GET", url, true);
+            xmlHttp.send();
+        }
+        function fosp_cmt() {
+            jQuery("#errCmt").html("");
+            jQuery("#errCmt").removeClass();
+            jQuery("#txtComment").removeClass("validation-failed");
+            if (jQuery("#txtComment").val() == "") {
+                jQuery("#errCmt").addClass("text-error");
+                jQuery("#txtComment").addClass("validation-failed");
+                jQuery("#errCmt").html("Vui lòng nhập nội dung và email của bạn.");
+                jQuery("#txtComment").focus();
+                return false;
+            }
+        }
+    </script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i["GoogleAnalyticsObject"] = r;
+            (i[r] =
+                i[r] ||
+                function () {
+                    (i[r].q = i[r].q || []).push(arguments);
+                }),
+                (i[r].l = 1 * new Date());
+            (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m);
+        })(window, document, "script", "//www.google-analytics.com/analytics.js", "ga");
+        ga("create", "UA-52977022-1", "auto");
+        ga("send", "pageview");
+    </script>
+    <!-- Đặt thẻ này vào phần đầu hoặc ngay trước thẻ đóng phần nội dung của bạn. -->
+    <script src="https://apis.google.com/js/platform.js" async="" defer="" gapi_processed="true">
+        {lang: 'vi'}
+    </script>
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "legalName": "sharecode.vn",
+            "url": "https://sharecode.vn",
+            "contactPoint": [
+                {
+                    "@type": "ContactPoint",
+                    "telephone": "+84981282756",
+                    "contactType": "customer service"
+                }
+            ],
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://sharecode.vn/tim-kiem.htm?tu-khoa={search_term}",
+                "query-input": "required name=search_term"
+            }
+        }
+    </script>
+
+    <script src="assets/js/jquery.easy-ticker.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+          var dd = $('.action_box').easyTicker({
+              direction: 'down',
+              easing: 'easeInOutBack',
+              speed: 'slow',
+              interval: 5000,
+              height: 'auto',
+              visible: 0,
+              mousePause: 0,
+              controls: {
+                  up: '.up',
+                  down: '.down',
+                  toggle: '.toggle',
+                  stopText: 'Stop !!!'
+              }
+          }).data('easyTicker');
+      });
+      Sys.WebForms.PageRequestManager.getInstance().add_endRequest(function (evt, args) {
+          $('.rateit').rateit({ max: 5, step: 1 });
+      });
+    </script>
+
+    <div class="hisella-messages" style="bottom: -350px; right: -30px;">
+        <div class="hisella-messages-outer">
+            <div id="hisella-minimize">&nbsp;HỖ TRỢ TRỰC TUYẾN</div>
+            <div
+                id="hisella-facebook"
+                class="fb-page fb_iframe_widget"
+                data-adapt-container-width="true"
+                data-height="350"
+                data-hide-cover="false"
+                data-href="https://www.facebook.com/sharecode.vn"
+                data-show-facepile="true"
+                data-show-posts="false"
+                data-small-header="false"
+                data-tabs="messages"
+                data-width="250"
+                fb-xfbml-state="rendered"
+                fb-iframe-plugin-query="adapt_container_width=true&amp;app_id=1938824166400762&amp;container_width=0&amp;height=350&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fsharecode.vn&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=false&amp;small_header=false&amp;tabs=messages&amp;width=250"
+                style="opacity: 0;"
+            >
+                <span style="vertical-align: bottom; width: 250px; height: 350px;">
+                    <iframe
+                        name="f2341bacc6fb8bc"
+                        width="250px"
+                        height="350px"
+                        data-testid="fb:page Facebook Social Plugin"
+                        title="fb:page Facebook Social Plugin"
+                        frameborder="0"
+                        allowtransparency="true"
+                        allowfullscreen="true"
+                        scrolling="no"
+                        allow="encrypted-media"
+                        src="https://www.facebook.com/v2.8/plugins/page.php?adapt_container_width=true&amp;app_id=1938824166400762&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df24c1225f2c742c%26domain%3Dsharecode.vn%26origin%3Dhttps%253A%252F%252Fsharecode.vn%252Ff147179f3f11adc%26relation%3Dparent.parent&amp;container_width=0&amp;height=350&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fsharecode.vn&amp;locale=en_US&amp;sdk=joey&amp;show_facepile=true&amp;show_posts=false&amp;small_header=false&amp;tabs=messages&amp;width=250"
+                        style="border: none; visibility: visible; width: 250px; height: 350px;"
+                        class=""
+                    ></iframe>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/frontend/js/jquery.easy-ticker.js"></script>
+    <script type="text/javascript" src="/assets/frontend/lib/jquery.bxslider/jquery.bxslider.min.js"></script>
+    <link href="/assets/frontend/lib/rateit/rateit.css" rel="stylesheet" />
+    <script src="/assets/frontend/lib/rateit/jquery.rateit.min.js"></script>
+
+    <ul class="ui-autocomplete ui-front ui-menu ui-widget ui-widget-content" id="ui-id-1" tabindex="0" style="display: none;"></ul>
+    <span role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></span>
+  </body>
+</html>
