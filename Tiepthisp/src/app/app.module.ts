@@ -10,6 +10,9 @@ import {FormsModule,ReactiveFormsModule} from '@angular/forms'
 import { ShareModule } from './share/share.module';
 import { MainModule } from './main/main.module';
 import { LoginComponent } from './admin/login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AuthModule} from './admin/auth/auth.module';
+import {NavigationModule } from './admin/main-layout/Navigation/navigation/navigation.module';
 
 @NgModule({
   declarations: [
@@ -17,13 +20,16 @@ import { LoginComponent } from './admin/login/login.component';
     LoginComponent,
   ],
   imports: [
+    AuthModule,
+    NavigationModule,
     MainModule,
     ShareModule,
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule
   ],
   providers: [SharedService],
   bootstrap: [AppComponent]

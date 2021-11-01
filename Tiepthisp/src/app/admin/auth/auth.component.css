@@ -1,0 +1,11 @@
+.auth-page {
+    display: flex;
+    justify-items: center;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    width: 80%;
+}
